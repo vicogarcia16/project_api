@@ -1,0 +1,31 @@
+# Entornos
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# Pipenv
+Pipfile.lock
+
+# Pytest
+.cache/
+*.pytest_cache/
+
+# VSCode
+.vscode/
+
+# Otros
+*.sqlite3
+.DS_Store
+.idea/

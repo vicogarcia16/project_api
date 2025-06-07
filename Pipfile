@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+sqlalchemy = {extras = ["asyncio"], version = "*"}
+asyncpg = "*"
+python-dotenv = "*"
+pydantic = "*"
+email-validator = "*"
+python-jose = "*"
+argon2-cffi = "*"
+passlib = {extras = ["argon2"], version = "*"}
+pydantic-settings = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-asyncio = "*"
+httpx = "*"
+alembic = "*"
+
+[scripts]
+server = "uvicorn app.main:app --reload"
+test = "pytest -p no:warnings -v"
+
+[requires]
+python_version = "3.11"
