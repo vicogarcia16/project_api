@@ -20,13 +20,13 @@ Debes crear los siguientes archivos en la raíz del proyecto:
 
 ### `.env` (para desarrollo)
 ```
-DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/mi_base
+DATABASE_URL=postgresql+asyncpg://usuario:contraseña@localhost:5432/mi_base
 SECRET_KEY=tu_clave_secreta
 BACKEND_CORS_ORIGINS=http://localhost:5173
 ```
 ### `.env.test` (para pruebas)
 ```
-DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/mi_base_test
+DATABASE_URL=postgresql+asyncpg://usuario:contraseña@localhost:5432/mi_base_test
 SECRET_KEY=clave_secreta_test
 BACKEND_CORS_ORIGINS=http://localhost:5173
 ```
