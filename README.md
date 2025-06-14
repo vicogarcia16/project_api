@@ -107,6 +107,14 @@ Todas las rutas requieren autenticación:
 
 ---
 
+## 🧭 Vista de la documentación Swagger
+
+Aquí puedes ver una vista previa del panel Swagger generado automáticamente por FastAPI:
+
+![Swagger Screenshot](https://github.com/vicogarcia16/project_api/blob/main/assets/swagger_preview.jpeg)
+
+---
+
 ## 📎 Nota sobre IA
 
 La API se conecta con **OpenRouter** para generar descripciones automáticas a partir del título de la tarea. Asegúrate de tener una `API key` válida en tus variables de entorno.
