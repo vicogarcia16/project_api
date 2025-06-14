@@ -8,7 +8,7 @@ from app.core.security import (
     create_access_token,
     create_refresh_token,
 )
-from app.models.user import User
+from app.models.models import User
 from app.schemas.user import UserCreate, UserLogin, AuthResponse, UserDisplay
 from app.middleware.jwt_bearer import verify_token
 import uuid
