@@ -50,6 +50,7 @@ DATABASE_URL=postgresql+asyncpg://usuario:contraseña@localhost:5432/mi_base
 SECRET_KEY=tu_clave_secreta
 BACKEND_CORS_ORIGINS=http://localhost:5173
 OPENROUTER_API_KEY=tu_api_key_openrouter
+OPENROUTER_MODEL=tu_model_seleccionado
 ```
 
 ### `.env.test` (para pruebas)
@@ -59,6 +60,7 @@ DATABASE_URL=postgresql+asyncpg://usuario:contraseña@localhost:5432/mi_base_tes
 SECRET_KEY=clave_secreta_test
 BACKEND_CORS_ORIGINS=http://localhost:5173
 OPENROUTER_API_KEY=tu_api_key_openrouter
+OPENROUTER_MODEL=tu_model_seleccionado
 ```
 
 ---
