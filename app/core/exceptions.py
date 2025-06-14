@@ -24,3 +24,7 @@ class DatabaseErrorException(HTTPException):
 class OpenRouterException(HTTPException):
     def __init__(self, detail: str = "Error writing description with OpenRouter"):
         super().__init__(status_code=status.HTTP_502_BAD_GATEWAY, detail=detail)
+
+class TaskNotFoundException(HTTPException):
+    def __init__(self, detail: str = "Task not found"):
+        super().__init__(status_code=status.HTTP_404_NOT_FOUND, detail=detail)

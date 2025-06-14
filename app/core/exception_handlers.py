@@ -6,7 +6,8 @@ from .exceptions import (
     EmailExistsException,
     InternalServerErrorException,
     DatabaseErrorException,
-    OpenRouterException
+    OpenRouterException,
+    TaskNotFoundException
 )
 
 def register_exception_handlers(app: FastAPI):
@@ -35,6 +36,10 @@ def register_exception_handlers(app: FastAPI):
     async def handle_openrouter_exception(request: Request, exc: OpenRouterException):
         return JSONResponse(status_code=exc.status_code, content={"message": exc.detail})
 
+    @app.exception_handler(TaskNotFoundException)
+    async def handle_task_not_found(request: Request, exc: TaskNotFoundException):
+        return JSONResponse(status_code=exc.status_code, content={"message": exc.detail})
+    
     # 🔥 Manejo global de HTTPException
     @app.exception_handler(HTTPException)
     async def handle_http_exception(request: Request, exc: HTTPException):
