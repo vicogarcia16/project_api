@@ -20,3 +20,7 @@ class InternalServerErrorException(HTTPException):
 class DatabaseErrorException(HTTPException):
     def __init__(self, detail: str = "Database error"):
         super().__init__(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=detail)
+
+class OpenRouterException(HTTPException):
+    def __init__(self, detail: str = "Error writing description with OpenRouter"):
+        super().__init__(status_code=status.HTTP_502_BAD_GATEWAY, detail=detail)

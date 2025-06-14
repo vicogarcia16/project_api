@@ -6,6 +6,7 @@ from .exceptions import (
     EmailExistsException,
     InternalServerErrorException,
     DatabaseErrorException,
+    OpenRouterException
 )
 
 def register_exception_handlers(app: FastAPI):
@@ -28,6 +29,10 @@ def register_exception_handlers(app: FastAPI):
 
     @app.exception_handler(DatabaseErrorException)
     async def handle_database_error(request: Request, exc: DatabaseErrorException):
+        return JSONResponse(status_code=exc.status_code, content={"message": exc.detail})
+    
+    @app.exception_handler(OpenRouterException)
+    async def handle_openrouter_exception(request: Request, exc: OpenRouterException):
         return JSONResponse(status_code=exc.status_code, content={"message": exc.detail})
 
     # 🔥 Manejo global de HTTPException
