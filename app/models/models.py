@@ -25,7 +25,7 @@ class Task(Base):
     title: Mapped[str] = mapped_column(String(100), nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=False)
     user_id: Mapped[str] = mapped_column(ForeignKey("users_practice.id"), nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow_truncated)
-    updated_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow_truncated, onupdate=utcnow_truncated)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow_truncated)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow_truncated, onupdate=utcnow_truncated)
     
     user: Mapped[User] = relationship(back_populates="tasks")
