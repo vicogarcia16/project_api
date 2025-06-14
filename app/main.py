@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from app.core.config import get_settings
 from app.db.database import engine, Base
 from app.middleware.cors import setup_cors
-from app.routes import user
+from app.routes import user, task
 from app.core.exception_handlers import register_exception_handlers
 
 settings = get_settings()
@@ -26,5 +26,6 @@ app = FastAPI(
 setup_cors(app)
 register_exception_handlers(app)
 app.include_router(user.router, prefix=settings.api_prefix)
+app.include_router(task.router, prefix=settings.api_prefix)
 
 
