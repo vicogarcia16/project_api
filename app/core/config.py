@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     BACKEND_CORS_ORIGINS: List[str]
     API_VERSION: str = "1"
+    OPENROUTER_API_KEY: str
+    OPENROUTER_MODEL: str
 
     class Config:
         env_file = ".env"
@@ -17,6 +19,11 @@ class Settings(BaseSettings):
     @property
     def api_prefix(self) -> str:
         return f"/api/v{self.API_VERSION}"
+    
+    @property
+    def user_agent(self) -> str:
+        app_name = "taskgen-fastapi"
+        return f"{app_name}/{self.API_VERSION}.0.0"
 
 @lru_cache
 def get_settings():
